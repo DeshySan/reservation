@@ -4,10 +4,15 @@ import bcrypt from "bcryptjs";
 
 export const hashPassword = async (password) => {
   try {
-    const saltRounds = process.env.saltRounds;
+    ///FYI, the more the saltRoudns, the more longer it will take. 10 seems to be ideal
+    const saltRounds = 10;
     const hashedPassword = await bcrypt.hash(password, saltRounds);
     return hashedPassword;
   } catch (error) {
     console.log(error);
   }
+};
+
+export const matchPassword = async (password, hashedPassword) => {
+  return bcrypt.compare(password, hashedPassword);
 };
