@@ -10,6 +10,13 @@ import user from "../../database/user.js";
 export const RegoController = async (req, res) => {
   try {
     const { username, email, password, role } = req.body;
+    const checkEmail = await user.findOne({ email });
+    if (checkEmail) {
+      res.status(404).send({
+        message: "User already exists",
+        success: false,
+      });
+    }
     const hashedPassword = await hashPassword(password);
     const newUser = new user({
       username,
