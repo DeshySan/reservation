@@ -78,3 +78,17 @@ export const putAreas = async (req, res) => {
     console.log(error);
   }
 };
+
+export const deleteAreas = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const deleteArea = await restaurantAreas.findByIdAndDelete(id);
+    res.status(200).send({
+      message: "Successfully deleted",
+      success: true,
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};

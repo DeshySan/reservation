@@ -1,0 +1,15 @@
+{
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "prettier.jsxSingleQuote": true,
+    "prettier.tabWidth": 2,  // You can set this to 4 if you prefer 4 spaces
+    "prettier.useTabs": false,  // Ensures spaces are used for indentation
+    "javascript.format.insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces": true,
+    "emmet.includeLanguages": {
+      "javascript": "javascriptreact"
+    },
+    "emmet.syntaxProfiles": {
+      "javascript": "jsx"
+    }
+  }
+  

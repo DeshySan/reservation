@@ -4,6 +4,7 @@ import {
   postRestaurant,
 } from "../controllers/Restaurant/Restaurant.js";
 import {
+  deleteAreas,
   getAreas,
   postAreas,
   putAreas,
@@ -18,4 +19,5 @@ router.get(`/getRestro`, getRestaurant);
 router.post(`/postAreas`, postAreas);
 router.get(`/getAreas`, getAreas);
 router.put(`/putAreas/:id`, putAreas);
+router.delete(`/deleteRestro/:id`, deleteAreas);
 export default router;
