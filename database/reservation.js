@@ -10,7 +10,7 @@ const ReservationSchema = new mongoose.Schema({
     ref: "Restaurant",
   },
   date: Date,
-  timeSlot: String,
+  timeSlot: Array,
   status: {
     type: String,
     enum: ["pending", "confirmed", "cancelled"],

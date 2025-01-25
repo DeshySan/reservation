@@ -9,10 +9,10 @@ const Dashboard = () => {
     <div className='flex flex-col h-screen'>
       <Header />
       <div className="flex flex-row flex-1">
-        <div className="w-64">
+        <div className="w-48">
           <Sidebar />
         </div>
-        <div className="flex-1 p-5">
+        <div className="flex-1 p-5 bg-darkWhite">
           <Outlet /> {/* This renders the active route here */}
         </div>
       </div>

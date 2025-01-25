@@ -1,8 +1,9 @@
 import React from 'react'
+import Areas from './Areas/Areas'
 
 const Reservation = () => {
   return (
-    <div>Reservation</div>
+    <div><Areas/></div>
   )
 }
 
