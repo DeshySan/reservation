@@ -11,7 +11,7 @@ const RestaurantSchema = new mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
     },
-    availableTimeSlots: { String },
+    availableTimeSlots: Array,
   },
   {
     timestamps: true,

@@ -1,4 +1,4 @@
-import restaurant from "../../database/restaurant";
+import restaurant from "../../database/restaurant.js";
 
 export const postRestaurant = async (req, res) => {
   try {
@@ -31,3 +31,18 @@ export const postRestaurant = async (req, res) => {
     console.log(error);
   }
 };
+
+export const getRestaurant = async (req, res) => {
+  try {
+    const Restro = await restaurant.find({});
+    res.status(200).send({
+      message: "Retrieved all the data successfully",
+      Restro,
+      success: true,
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const updateReservation = async (req, res) => {};
