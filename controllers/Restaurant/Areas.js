@@ -20,9 +20,9 @@ export const postAreas = async (req, res) => {
       status,
       description,
       restaurant,
-      MaxCover,
-      TotalCover,
-      Active,
+      maxCover,
+      totalCover,
+      active,
     } = req.body;
 
     const newArea = new restaurantAreas({
@@ -30,9 +30,9 @@ export const postAreas = async (req, res) => {
       status,
       description,
       restaurant,
-      MaxCover,
-      TotalCover,
-      Active,
+      maxCover,
+      totalCover,
+      active,
     });
 
     await newArea.save();

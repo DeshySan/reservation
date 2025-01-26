@@ -3,12 +3,14 @@ import React, { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import EditAreas from "./EditAreas";
 import { sweetSuccess, sweetWarning } from "../../helpers/Alerts";
+import NewArea from "./NewArea";
 
 const Areas = () => {
   //useStates
   const [areas, setAreas] = useState();
   const [openArea, setOpenArea] = useState();
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isNewModalOpen, setIsNewModalOpen] = useState(false);
   // function to handle fetch information from the DB
   const fetch = async () => {
     try {
@@ -30,8 +32,15 @@ const Areas = () => {
     }
   };
 
-  const closeModal = async () => {
+  const closeModal = () => {
     setIsModalOpen(false);
+  };
+
+  const closeNewModal = () => {
+    setIsNewModalOpen(false);
+  };
+  const handleOpenNewModal = () => {
+    setIsNewModalOpen(true);
   };
 
   const handleSave = (updatedArea) => {
@@ -71,12 +80,15 @@ const Areas = () => {
         <h1 className='font-Roboto font-bold text-xl font-uppercase'>
           Restaurant Areas
         </h1>
+        <button
+          onClick={handleOpenNewModal}
+          className='bg-pink text-white px-4 py-2 rounded-md hover:bg-teal-dark ml-auto'>
+          New Areas
+        </button>
         <p className='text-teal'>
-          {" "}
           <NavLink className='mr-2'>Admin</NavLink>/{" "}
           <NavLink className='ml-2'>Restaurant Areas</NavLink>
         </p>
-        <button>New Areas</button>
       </div>
       <div className='overflow-x-auto'>
         <table className='table-auto w-full p-4 md:p-2 lg:p-1 xl:p-1 bg-white shadow-xl mt-4'>
@@ -131,6 +143,7 @@ const Areas = () => {
           onSave={handleSave}
         />
       )}
+      {isNewModalOpen && <NewArea closeNewModal={closeNewModal} />}
     </div>
   );
 };
